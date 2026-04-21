@@ -1,16 +1,149 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Santunan Anak Yatim - Masjid Al-Hamd</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pengajian Mingguan - Masjid Al-Hamd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body>
-  <div class="container">
-    <a href="..">← Kembali</a>
-    <h1>Santunan Anak Yatim</h1>
-    <p>Kegiatan santunan diadakan setiap Ramadhan untuk membantu anak-anak yang membutuhkan.</p>
-  </div>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity">
+          <span class="text-emerald-600">🕌</span>
+          <span class="text-emerald-700">Masjid</span>
+          <span class="text-gray-800">Al-Hamd</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Kembali
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 animate-fade-in">
+    <!-- Article Header -->
+    <article class="bg-white rounded-xl shadow-sm p-8 md:p-12 mb-12">
+      <div class="mb-6">
+        <span class="inline-block bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">Rutin Mingguan</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Pengajian Mingguan</h1>
+      <p class="text-lg text-gray-600 mb-8">Setiap minggu kami mengadakan pengajian dengan topik-topik yang relevan dan bermanfaat untuk pengembangan diri</p>
+      
+      <div class="prose prose-lg max-w-none mb-8 text-gray-600">
+        <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Tentang Pengajian Kami</h2>
+        <p>Pengajian mingguan adalah salah satu program unggulan Masjid Al-Hamd yang rustin diadakan untuk memberikan pendidikan spiritual kepada seluruh jemaah. Program ini dirancang dengan topik yang selektif dan relevan dengan kehidupan sehari-hari.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Jadwal Pengajian</h3>
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+            </svg>
+            <p class="font-medium text-blue-900">Hari Jumat</p>
+          </div>
+          <p class="text-blue-800 mb-2">Waktu: 19:00 - 20:30 (Selepas Sholat Maghrib)</p>
+          <p class="text-blue-800">Lokasi: Aula Utama Masjid</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Topik-Topik Pembahasan</h3>
+        <ul class="list-disc list-inside space-y-2 mb-6">
+          <li><strong>Akhlak & Etika Islam</strong> - Membangun karakter islami yang kuat</li>
+          <li><strong>Fiqih Praktis</strong> - Pemahaman hukum Islam untuk kehidupan sehari-hari</li>
+          <li><strong>Hadist & Sunnah</strong> - Pembelajaran dari ajaran Nabi Muhammad SAW</li>
+          <li><strong>Tafsir Quran</strong> - Memahami ayat-ayat Al-Quran dengan mendalam</li>
+          <li><strong>Motivasi & Spiritual</strong> - Penguatan iman dan taqwa</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Pemateri & Narasumber</h3>
+        <p>Pengajian dipimpin oleh ulama dan guru-guru berpengalaman yang memiliki kompetensi di bidangnya masing-masing. Kami juga mengundang narasumber tamu dari berbagai institusi pendidikan islam terkemuka.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Fasilitas & Kenyamanan</h3>
+        <ul class="list-disc list-inside space-y-2 mb-6">
+          <li>Ruang AC yang nyaman dan tertib</li>
+          <li>Disediakan tempat parkir yang luas</li>
+          <li>Mushola dan toilet yang terawat</li>
+          <li>Minuman dan makanan ringan</li>
+          <li>Sesi tanya jawab interaktif</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Daftar & Pendaftaran</h3>
+        <p>Pengajian terbuka untuk semua kalangan tanpa biaya pendaftaran. Peserta tinggal datang langsung atau bisa menghubungi kami untuk mendapatkan informasi lebih lanjut tentang topik minggu depan.</p>
+      </div>
+
+      <!-- Image Placeholder -->
+      <div class="my-8">
+        <div class="w-full h-96 bg-gradient-to-br from-blue-100 to-cyan-100 rounded-lg flex items-center justify-center">
+          <svg class="w-24 h-24 text-blue-300" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Meta Info -->
+      <div class="flex flex-wrap gap-6 py-6 border-t border-gray-200">
+        <div>
+          <p class="text-sm text-gray-500">Diterbitkan</p>
+          <p class="font-medium text-gray-900">21 April 2026</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Frekuensi</p>
+          <p class="font-medium text-blue-600">Setiap Jumat</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Artikel Terkait</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="post1.html" class="group bg-white rounded-lg shadow-sm hover:shadow-lg transition-all p-6 border-l-4 border-transparent hover:border-emerald-600">
+          <h3 class="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors mb-2">Program Ramadhan</h3>
+          <p class="text-gray-600 text-sm">Rangkaian kegiatan spesial selama bulan Ramadhan untuk seluruh jemaah.</p>
+        </a>
+        <a href="post3.html" class="group bg-white rounded-lg shadow-sm hover:shadow-lg transition-all p-6 border-l-4 border-transparent hover:border-emerald-600">
+          <h3 class="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors mb-2">Program Sosial</h3>
+          <p class="text-gray-600 text-sm">Komitmen kami membantu sesama melalui berbagai program donasi.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white rounded-xl p-8 md:p-12 text-center">
+      <h3 class="text-2xl font-bold mb-4">Jangan Lewatkan Pengajian Minggu Depan!</h3>
+      <p class="text-emerald-100 mb-6">Kami tunggu kehadiranmu untuk belajar bersama dan memperkuat iman kita.</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="../index.html#kontak" class="bg-white text-emerald-600 px-8 py-3 rounded-lg hover:bg-emerald-50 transition-colors font-bold">Hubungi Kami</a>
+        <a href="../index.html" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-colors font-bold">Kembali ke Beranda</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Masjid Al-Hamd. Semua hak dilindungi.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+          <a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
 </body>
 </html>

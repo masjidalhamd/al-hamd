@@ -1,13 +1,189 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Kerja Bakti - Masjid Al-Hamd</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Program Sosial & Donasi - Masjid Al-Hamd</title>
+  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="../styles.css">
+  <style>
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body>
-  <div class="container">
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <a href="../index.html" class="flex items-center gap-2 font-bold text-xl hover:opacity-80 transition-opacity">
+          <span class="text-emerald-600">🕌</span>
+          <span class="text-emerald-700">Masjid</span>
+          <span class="text-gray-800">Al-Hamd</span>
+        </a>
+        <a href="../index.html" class="inline-flex items-center gap-2 text-emerald-600 hover:text-emerald-700 font-medium transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+          Kembali
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16 animate-fade-in">
+    <!-- Article Header -->
+    <article class="bg-white rounded-xl shadow-sm p-8 md:p-12 mb-12">
+      <div class="mb-6">
+        <span class="inline-block bg-red-100 text-red-800 px-3 py-1 rounded-full text-sm font-medium">Program Kepedulian</span>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Program Sosial & Kepedulian</h1>
+      <p class="text-lg text-gray-600 mb-8">Komitmen kami untuk membantu sesama melalui berbagai program donasi, santunan, dan pemberdayaan masyarakat</p>
+      
+      <div class="prose prose-lg max-w-none mb-8 text-gray-600">
+        <h2 class="text-2xl font-bold text-gray-900 mt-8 mb-4">Misi Sosial Kami</h2>
+        <p>Masjid Al-Hamd tidak hanya berfungsi sebagai tempat ibadah, tetapi juga sebagai pusat kepedulian sosial. Kami percaya bahwa berbagi dan membantu sesama adalah bagian penting dari pengamalan agama Islam.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Program-Program Unggulan</h3>
+        
+        <div class="bg-red-50 border-l-4 border-red-400 p-4 mb-6 rounded">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z"/>
+            </svg>
+            <h4 class="font-bold text-red-900">Santunan Anak Yatim & Dhuafa</h4>
+          </div>
+          <p class="text-red-800">Setiap bulan kami mengalokasikan dana khusus untuk membantu anak-anak yatim dan keluarga dhuafa di sekitar masjid.</p>
+        </div>
+
+        <div class="bg-orange-50 border-l-4 border-orange-400 p-4 mb-6 rounded">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-orange-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h4 class="font-bold text-orange-900">Program Distribusi Pangan</h4>
+          </div>
+          <p class="text-orange-800">Paket sembako dan makanan hidup diberikan kepada keluarga kurang mampu terutama saat bulan Ramadhan dan hari raya.</p>
+        </div>
+
+        <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-6 rounded">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-yellow-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+            </svg>
+            <h4 class="font-bold text-yellow-900">Program Beasiswa Pendidikan</h4>
+          </div>
+          <p class="text-yellow-800">Kami menyediakan beasiswa untuk siswa berprestasi dari keluarga ekonomi lemah agar dapat melanjutkan pendidikan.</p>
+        </div>
+
+        <div class="bg-green-50 border-l-4 border-green-400 p-4 mb-6 rounded">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-green-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+            </svg>
+            <h4 class="font-bold text-green-900">Program Kesehatan Gratis</h4>
+          </div>
+          <p class="text-green-800">Klinik kesehatan gratis diadakan setiap bulan untuk memberikan pemeriksaan kesehatan dasar kepada masyarakat.</p>
+        </div>
+
+        <div class="bg-blue-50 border-l-4 border-blue-400 p-4 mb-6 rounded">
+          <div class="flex items-center gap-2 mb-2">
+            <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm3.5-9c.83 0 1.5-.67 1.5-1.5S16.33 8 15.5 8 14 8.67 14 9.5s.67 1.5 1.5 1.5zm-7 0c.83 0 1.5-.67 1.5-1.5S9.33 8 8.5 8 7 8.67 7 9.5 7.67 11 8.5 11zm3.5 6.5c2.33 0 4.31-1.46 5.11-3.5H6.89c.8 2.04 2.78 3.5 5.11 3.5z"/>
+            </svg>
+            <h4 class="font-bold text-blue-900">Program Pemberdayaan Ekonomi</h4>
+          </div>
+          <p class="text-blue-800">Pelatihan keterampilan dan modal usaha diberikan kepada ibu-ibu rumah tangga untuk meningkatkan penghasilan keluarga.</p>
+        </div>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Bagaimana Cara Berdonasi?</h3>
+        <ul class="list-disc list-inside space-y-2 mb-6">
+          <li><strong>Donasi Langsung</strong> - Datang ke masjid dan serahkan donasi Anda kepada pengurus</li>
+          <li><strong>Transfer Bank</strong> - Hubungi kami untuk mendapatkan rekening donasi resmi</li>
+          <li><strong>Tanah Abang/Barang</strong> - Donasi dalam bentuk barang atau kebutuhan pokok juga diterima</li>
+          <li><strong>Sponsor Program</strong> - Jadilah sponsor untuk salah satu program sosial kami</li>
+        </ul>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Transparansi & Akuntabilitas</h3>
+        <p>Semua donasi yang masuk dikelola dengan transparansi penuh. Kami secara berkala membuat laporan keuangan yang dapat diakses oleh semua donatur. Kepercayaan Anda adalah aset terbesar bagi kami.</p>
+
+        <h3 class="text-xl font-bold text-gray-900 mt-6 mb-3">Hubungi Kami</h3>
+        <div class="bg-blue-50 p-4 rounded-lg">
+          <p class="mb-2"><strong>Koordinator Program Sosial:</strong></p>
+          <ul class="list-disc list-inside space-y-1 text-blue-900">
+            <li>Telepon: (021) 1234-5678 ext. 5</li>
+            <li>Email: sosial@alhamd.example</li>
+            <li>WhatsApp: <a href="https://wa.me/6281234567890" class="hover:underline font-medium">+62 812-3456-7890</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Image Placeholder -->
+      <div class="my-8">
+        <div class="w-full h-96 bg-gradient-to-br from-red-100 to-pink-100 rounded-lg flex items-center justify-center">
+          <svg class="w-24 h-24 text-red-300" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Meta Info -->
+      <div class="flex flex-wrap gap-6 py-6 border-t border-gray-200">
+        <div>
+          <p class="text-sm text-gray-500">Diterbitkan</p>
+          <p class="font-medium text-gray-900">21 April 2026</p>
+        </div>
+        <div>
+          <p class="text-sm text-gray-500">Kategori</p>
+          <p class="font-medium text-red-600">Program Sosial</p>
+        </div>
+      </div>
+    </article>
+
+    <!-- Related Posts -->
+    <section class="mb-12">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6">Artikel Terkait</h2>
+      <div class="grid md:grid-cols-2 gap-6">
+        <a href="post1.html" class="group bg-white rounded-lg shadow-sm hover:shadow-lg transition-all p-6 border-l-4 border-transparent hover:border-emerald-600">
+          <h3 class="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors mb-2">Program Ramadhan</h3>
+          <p class="text-gray-600 text-sm">Rangkaian kegiatan spesial selama bulan Ramadhan untuk seluruh jemaah.</p>
+        </a>
+        <a href="post2.html" class="group bg-white rounded-lg shadow-sm hover:shadow-lg transition-all p-6 border-l-4 border-transparent hover:border-emerald-600">
+          <h3 class="font-bold text-gray-900 group-hover:text-emerald-600 transition-colors mb-2">Pengajian Mingguan</h3>
+          <p class="text-gray-600 text-sm">Setiap minggu kami mengadakan pengajian dengan topik yang bermanfaat.</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <div class="bg-gradient-to-r from-red-600 to-rose-700 text-white rounded-xl p-8 md:p-12 text-center">
+      <h3 class="text-2xl font-bold mb-4">Mari Bersama Berbagi Berkah</h3>
+      <p class="text-red-100 mb-6">Setiap donasi Anda membawa kebahagiaan bagi sesama. Tidak ada yang terlalu kecil untuk membuat perbedaan.</p>
+      <div class="flex gap-4 justify-center flex-wrap">
+        <a href="../index.html#donasi" class="bg-white text-red-600 px-8 py-3 rounded-lg hover:bg-red-50 transition-colors font-bold">Donasi Sekarang</a>
+        <a href="../index.html" class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-colors font-bold">Kembali ke Beranda</a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 mt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Masjid Al-Hamd. Semua hak dilindungi.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+          <a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>
     <a href="..">← Kembali</a>
     <h1>Kerja Bakti</h1>
     <p>Kerja bakti bulanan menjaga kebersihan dan perbaikan ringan area masjid. Ayo bergabung.</p>

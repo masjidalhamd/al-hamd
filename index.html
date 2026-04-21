@@ -1,108 +1,324 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Masjid Al-Hamd - Onepage</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Masjid Al-Hamd | Ibadah & Edukasi</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .animate-slide-down { animation: slideDown 0.3s ease-out; }
+    .animate-fade-in { animation: fadeIn 0.5s ease-out; }
+    html { scroll-behavior: smooth; }
+  </style>
 </head>
-<body>
-  <header id="top">
-    <div class="container header-inner">
-      <h1>Masjid Al-Hamd</h1>
-      <button class="nav-toggle" aria-label="Buka menu">☰</button>
-      <nav class="main-nav">
-        <a href="#about">About</a>
-        <a href="#kas">KAS</a>
-        <a href="#kegiatan">Kegiatan</a>
-        <a href="#kebutuhan">Kebutuhan</a>
-        <a href="#contact">Kontak</a>
-      </nav>
-    </div>
-    <div id="carousel" class="carousel">
-      <button class="carousel-btn prev" aria-label="Prev">‹</button>
-      <div class="slides">
-        <img src="images/masjid1.svg" alt="Masjid 1" class="active">
-        <img src="images/masjid2.svg" alt="Masjid 2">
-        <img src="images/masjid3.svg" alt="Masjid 3">
-      </div>
-      <button class="carousel-btn next" aria-label="Next">›</button>
-      <div class="carousel-indicators">
-        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
-        <button class="dot" data-index="1" aria-label="Slide 2"></button>
-        <button class="dot" data-index="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="hero-overlay">
-        <div class="hero-inner container">
-          <h2>Selamat Datang di Masjid Al-Hamd</h2>
-          <p>Mari bersama membangun kegiatan & kebaikan untuk lingkungan.</p>
-          <a class="btn hero-cta" href="#kegiatan">Lihat Kegiatan</a>
+<body class="bg-gray-50 text-gray-900">
+  <!-- Header Navigation -->
+  <header class="sticky top-0 z-50 bg-white shadow-sm transition-shadow duration-300">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex items-center justify-between">
+        <!-- Logo -->
+        <a href="index.html" class="flex items-center gap-2 font-bold text-2xl">
+          <img src="images/logo.jpg" alt="Logo Masjid Al-Hamd" class="h-10 w-10 object-cover rounded-lg">
+          <span class="text-emerald-700">Masjid</span>
+          <span class="text-gray-800">Al-Hamd</span>
+        </a>
+
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center gap-8">
+          <a href="index.html" class="text-gray-700 hover:text-emerald-600 transition-colors font-medium">Beranda</a>
+          <a href="#tentang" class="text-gray-700 hover:text-emerald-600 transition-colors font-medium">Tentang</a>
+          
+          <!-- Dropdown -->
+          <div class="relative group">
+            <button class="text-gray-700 hover:text-emerald-600 transition-colors font-medium flex items-center gap-2">
+              Program
+              <svg class="w-4 h-4 group-hover:rotate-180 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+              </svg>
+            </button>
+            <div class="absolute left-0 mt-0 w-48 bg-white rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 animate-slide-down">
+              <a href="#" class="block px-4 py-3 hover:bg-emerald-50 text-gray-700 hover:text-emerald-600 first:rounded-t-lg transition-colors">Kajian Rutin</a>
+              <a href="#" class="block px-4 py-3 hover:bg-emerald-50 text-gray-700 hover:text-emerald-600 last:rounded-b-lg transition-colors">Pengajian Anak</a>
+            </div>
+          </div>
+
+          <a href="#berita" class="text-gray-700 hover:text-emerald-600 transition-colors font-medium">Berita & Kegiatan</a>
+          <a href="#kontak" class="text-gray-700 hover:text-emerald-600 transition-colors font-medium">Kontak</a>
+        </div>
+
+        <!-- CTA Button & Mobile Menu Toggle -->
+        <div class="flex items-center gap-4">
+          <a href="#donasi" class="hidden sm:inline-block bg-emerald-600 text-white px-6 py-2 rounded-lg hover:bg-emerald-700 transition-colors font-medium">Donasi</a>
+          <button id="menuToggle" class="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
         </div>
       </div>
-    </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 border-t border-gray-200">
+        <a href="index.html" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded transition-colors">Beranda</a>
+        <a href="#tentang" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded transition-colors">Tentang</a>
+        <a href="#programs" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded transition-colors">Program</a>
+        <a href="#berita" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded transition-colors">Berita & Kegiatan</a>
+        <a href="#kontak" class="block px-4 py-2 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded transition-colors">Kontak</a>
+        <a href="#donasi" class="block mt-2 bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition-colors text-center font-medium">Donasi</a>
+      </div>
+    </nav>
   </header>
 
+  <!-- Hero with Carousel -->
+  <section class="relative overflow-hidden bg-gradient-to-b from-emerald-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 flex flex-col md:flex-row items-center gap-12 animate-fade-in">
+      <div class="flex-1">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+          Selamat Datang di<br><span class="text-emerald-600">Masjid Al-Hamd</span>
+        </h1>
+        <p class="text-lg text-gray-600 mb-8">Ruang ibadah, edukasi, dan kegiatan sosial untuk membangun komunitas yang kuat dan berkah.</p>
+        <div class="flex gap-4 flex-wrap">
+          <a href="#berita" class="bg-emerald-600 text-white px-8 py-3 rounded-lg hover:bg-emerald-700 transition-all duration-300 transform hover:scale-105 font-medium">Lihat Kegiatan</a>
+          <a href="#donasi" class="border-2 border-emerald-600 text-emerald-600 px-8 py-3 rounded-lg hover:bg-emerald-50 transition-all duration-300 font-medium">Donasi Sekarang</a>
+        </div>
+      </div>
+
+      <!-- Image Carousel -->
+      <div class="flex-1 relative">
+        <div class="relative rounded-2xl overflow-hidden shadow-2xl">
+          <div id="carousel" class="flex transition-transform duration-500 ease-out">
+            <img src="images/masjid1.png" alt="Masjid 1" class="w-full h-96 object-cover flex-shrink-0">
+            <img src="images/masjid2.png" alt="Masjid 2" class="w-full h-96 object-cover flex-shrink-0">
+            <img src="images/masjid3.png" alt="Masjid 3" class="w-full h-96 object-cover flex-shrink-0">
+          </div>
+        </div>
+
+        <!-- Carousel Controls -->
+        <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200 transform hover:scale-110 z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+          </svg>
+        </button>
+        <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white p-2 rounded-full shadow-lg transition-all duration-200 transform hover:scale-110 z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </button>
+
+        <!-- Indicators -->
+        <div class="flex gap-2 justify-center mt-4">
+          <button data-index="0" class="carousel-dot w-3 h-3 rounded-full bg-emerald-600 transition-all duration-300"></button>
+          <button data-index="1" class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></button>
+          <button data-index="2" class="carousel-dot w-3 h-3 rounded-full bg-gray-300 hover:bg-gray-400 transition-all duration-300"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
   <main>
-    <section id="about" class="section container">
-      <h2>Tentang Masjid</h2>
-      <p>Masjid Al-Hamd merupakan pusat kegiatan keagamaan dan sosial untuk warga sekitar. Website ini menampilkan informasi KAS, kegiatan, dan kebutuhan masjid.</p>
-    </section>
+    <!-- Tentang Section -->
+    <section id="tentang" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Tentang Kami</h2>
+        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+          Masjid Al-Hamd berdiri sebagai pusat ibadah dan pembelajaran untuk membangun umat yang berkualitas, sejahtera, dan berbudi pekerti luhur.
+        </p>
+      </div>
 
-    <section id="kas" class="section container">
-      <h2>KAS (Dana)</h2>
-      <div class="kas-card">
-        <p>Target Bulanan: <strong>Rp 5.000.000</strong></p>
-        <div class="progress">
-          <div class="bar" style="width:48%">48%</div>
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 border-t-4 border-emerald-600 transform hover:translate-y-1">
+          <div class="w-12 h-12 bg-emerald-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-emerald-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-2-13h4v6h-4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Ibadah</h3>
+          <p class="text-gray-600">Sarana ibadah yang nyaman dan khusyuk untuk semua jemaah.</p>
         </div>
-        <div class="kas-actions">
-          <button class="btn">Donasi Sekarang</button>
-          <a href="#" class="btn ghost">Riwayat KAS</a>
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 border-t-4 border-emerald-600 transform hover:translate-y-1">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Edukasi</h3>
+          <p class="text-gray-600">Program kajian dan pembelajaran untuk pengembangan diri.</p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 border-t-4 border-emerald-600 transform hover:translate-y-1">
+          <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center mb-4">
+            <svg class="w-6 h-6 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+            </svg>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Sosial</h3>
+          <p class="text-gray-600">Program kepedulian sosial untuk membantu sesama masyarakat.</p>
         </div>
       </div>
     </section>
 
-    <section id="kegiatan" class="section container">
-      <h2>Kegiatan</h2>
-      <div class="cards">
-        <a class="card" href="posts/post1.html" target="_blank" rel="noopener noreferrer">
-          <img src="images/masjid1.svg" alt="post 1">
-          <h3>Pengajian Rutin</h3>
-          <p>Pengajian sore tiap Jumat selepas Maghrib.</p>
-        </a>
-        <a class="card" href="posts/post2.html" target="_blank" rel="noopener noreferrer">
-          <img src="images/masjid2.svg" alt="post 2">
-          <h3>Santunan Anak Yatim</h3>
-          <p>Pelaksanaan setiap bulan Ramadhan.</p>
-        </a>
-        <a class="card" href="posts/post3.html" target="_blank" rel="noopener noreferrer">
-          <img src="images/masjid3.svg" alt="post 3">
-          <h3>Kerja Bakti</h3>
-          <p>Bersih-bersih dan perawatan fasilitas masjid.</p>
-        </a>
+    <!-- Berita & Kegiatan Section -->
+    <section id="berita" class="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Berita & Kegiatan</h2>
+          <p class="text-lg text-gray-600">Ikuti perkembangan terbaru dan program-program kami</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <a href="posts/post1.html" class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="h-48 bg-gradient-to-br from-amber-100 to-emerald-100 overflow-hidden">
+              <svg class="w-full h-full text-amber-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">Program Ramadhan</h3>
+              <p class="text-gray-600 mb-4">Rangkaian kegiatan special selama bulan Ramadhan untuk seluruh lapisan masyarakat dan keluarga.</p>
+              <span class="inline-flex items-center text-emerald-600 font-medium group-hover:gap-2 transition-all">
+                Baca selengkapnya <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Card 2 -->
+          <a href="posts/post2.html" class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="h-48 bg-gradient-to-br from-blue-100 to-emerald-100 overflow-hidden">
+              <svg class="w-full h-full text-blue-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V8h14v11z"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">Pengajian Mingguan</h3>
+              <p class="text-gray-600 mb-4">Setiap minggu kami mengadakan pengajian dengan topik-topik yang bermanfaat dan relevan dengan kehidupan.</p>
+              <span class="inline-flex items-center text-emerald-600 font-medium group-hover:gap-2 transition-all">
+                Baca selengkapnya <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+
+          <!-- Card 3 -->
+          <a href="posts/post3.html" class="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
+            <div class="h-48 bg-gradient-to-br from-red-100 to-emerald-100 overflow-hidden">
+              <svg class="w-full h-full text-red-300" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M20 13H4c-.55 0-1 .45-1 1v6c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2v-6c0-.55-.45-1-1-1z"/>
+              </svg>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-emerald-600 transition-colors">Program Sosial</h3>
+              <p class="text-gray-600 mb-4">Komitmen kami untuk membantu sesama melalui berbagai program donasi dan pemberdayaan ekonomi masyarakat.</p>
+              <span class="inline-flex items-center text-emerald-600 font-medium group-hover:gap-2 transition-all">
+                Baca selengkapnya <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+              </span>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
-    <section id="kebutuhan" class="section container">
-      <h2>Kebutuhan</h2>
-      <ul class="needs">
-        <li>Karpet baru untuk ruang utama (3x)</li>
-        <li>Perbaikan lampu halaman</li>
-        <li>Perlengkapan kebersihan (sapu, alat pel)</li>
-      </ul>
+    <!-- Kontak Section -->
+    <section id="kontak" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Hubungi Kami</h2>
+        <p class="text-lg text-gray-600">Kami siap membantu dan menjawab pertanyaan Anda</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white p-8 rounded-xl shadow-sm text-center hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-rose-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-6 h-6 text-rose-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Lokasi</h3>
+          <p class="text-gray-600"><a href="https://maps.app.goo.gl/VkmSmC2WQRQPEFtt6" class="hover:text-emerald-600 transition-colors" target="_blank">Bekasi Timur Regensi 5 Cluster Kalimeris RT.001/RW.005</a></p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm text-center hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-6 h-6 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Telepon</h3>
+          <p class="text-gray-600"><a href="tel:+621234567890" class="hover:text-emerald-600 transition-colors">(021) 1234-5678</a></p>
+        </div>
+        <div class="bg-white p-8 rounded-xl shadow-sm text-center hover:shadow-lg transition-shadow">
+          <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 mx-auto">
+            <svg class="w-6 h-6 text-purple-600" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-gray-900 mb-2">Email</h3>
+          <p class="text-gray-600"><a href="mailto:masjidalhamd9@gmail.com" class="hover:text-emerald-600 transition-colors">masjidalhamd9@gmail.com</a></p>
+        </div>
+      </div>
     </section>
 
-    <section id="contact" class="section container">
-      <h2>Kontak</h2>
-      <p>Alamat: Jl. Contoh No.1 — Telepon: 0812-xxxx-xxxx</p>
+    <!-- Donasi Section -->
+    <section id="donasi" class="bg-gradient-to-r from-emerald-600 to-emerald-800 text-white py-16 md:py-24">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">Mari Bersama Berbagi Berkah</h2>
+        <p class="text-lg text-emerald-100 mb-8">Donasi Anda akan membantu kami mengembangkan program ibadah, edukasi, dan sosial untuk komunitas yang lebih baik.</p>
+        <div class="flex gap-4 flex-wrap justify-center">
+          <button class="bg-white text-emerald-600 px-8 py-3 rounded-lg hover:bg-emerald-50 transition-colors font-bold shadow-lg hover:shadow-xl">Donasi Sekarang</button>
+          <button class="border-2 border-white text-white px-8 py-3 rounded-lg hover:bg-white/10 transition-colors font-bold">Jadilah Sponsor</button>
+        </div>
+      </div>
     </section>
   </main>
 
-  <footer class="container">
-    <p>&copy; Masjid Al-Hamd</p>
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-300 py-12 md:py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8 mb-8">
+        <div>
+          <h3 class="text-white font-bold text-lg mb-4">Masjid Al-Hamd</h3>
+          <p class="text-gray-400">Bekasi Timur Regensi 5, Cluster Kalimeris RT.001/RW.005, Sumur Batu, Kec. Bantar Gebang, Kota Bks, Jawa Barat 17154</p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Menu</h4>
+          <ul class="space-y-2">
+            <li><a href="index.html" class="hover:text-white transition-colors">Beranda</a></li>
+            <li><a href="#tentang" class="hover:text-white transition-colors">Tentang</a></li>
+            <li><a href="#berita" class="hover:text-white transition-colors">Berita</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Tautan</h4>
+          <ul class="space-y-2">
+            <li><a href="#kontak" class="hover:text-white transition-colors">Kontak</a></li>
+            <li><a href="#donasi" class="hover:text-white transition-colors">Donasi</a></li>
+            <li><a href="#" class="hover:text-white transition-colors">Karir</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-4">Sosial Media</h4>
+          <div class="flex gap-4">
+            <a href="#" class="hover:text-white transition-colors">Facebook</a>
+            <a href="https://www.instagram.com/masjidalhamd/" class="hover:text-white transition-colors" target="_blank">Instagram</a>
+            <a href="#" class="hover:text-white transition-colors">YouTube</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+        <p>&copy; 2026 Masjid Al-Hamd. Semua hak dilindungi.</p>
+        <div class="flex gap-6">
+          <a href="#" class="hover:text-white transition-colors">Kebijakan Privasi</a>
+          <a href="#" class="hover:text-white transition-colors">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
   </footer>
 
   <script src="script.js"></script>
