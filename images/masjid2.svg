@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400">
+  <rect width="100%" height="100%" fill="#fff7e9" />
+  <g fill="#b06e0b">
+    <rect x="140" y="160" width="520" height="170" rx="12" />
+    <polygon points="400,40 460,140 340,140" />
+    <rect x="360" y="90" width="80" height="70" rx="8" />
+  </g>
+  <text x="50%" y="360" font-size="22" text-anchor="middle" fill="#7a4a05">Masjid 2</text>
+</svg>

@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Masjid Al-Hamd - Onepage</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header id="top">
+    <div class="container header-inner">
+      <h1>Masjid Al-Hamd</h1>
+      <button class="nav-toggle" aria-label="Buka menu">☰</button>
+      <nav class="main-nav">
+        <a href="#about">About</a>
+        <a href="#kas">KAS</a>
+        <a href="#kegiatan">Kegiatan</a>
+        <a href="#kebutuhan">Kebutuhan</a>
+        <a href="#contact">Kontak</a>
+      </nav>
+    </div>
+    <div id="carousel" class="carousel">
+      <button class="carousel-btn prev" aria-label="Prev">‹</button>
+      <div class="slides">
+        <img src="images/masjid1.svg" alt="Masjid 1" class="active">
+        <img src="images/masjid2.svg" alt="Masjid 2">
+        <img src="images/masjid3.svg" alt="Masjid 3">
+      </div>
+      <button class="carousel-btn next" aria-label="Next">›</button>
+      <div class="carousel-indicators">
+        <button class="dot active" data-index="0" aria-label="Slide 1"></button>
+        <button class="dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="dot" data-index="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="hero-overlay">
+        <div class="hero-inner container">
+          <h2>Selamat Datang di Masjid Al-Hamd</h2>
+          <p>Mari bersama membangun kegiatan & kebaikan untuk lingkungan.</p>
+          <a class="btn hero-cta" href="#kegiatan">Lihat Kegiatan</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about" class="section container">
+      <h2>Tentang Masjid</h2>
+      <p>Masjid Al-Hamd merupakan pusat kegiatan keagamaan dan sosial untuk warga sekitar. Website ini menampilkan informasi KAS, kegiatan, dan kebutuhan masjid.</p>
+    </section>
+
+    <section id="kas" class="section container">
+      <h2>KAS (Dana)</h2>
+      <div class="kas-card">
+        <p>Target Bulanan: <strong>Rp 5.000.000</strong></p>
+        <div class="progress">
+          <div class="bar" style="width:48%">48%</div>
+        </div>
+        <div class="kas-actions">
+          <button class="btn">Donasi Sekarang</button>
+          <a href="#" class="btn ghost">Riwayat KAS</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="kegiatan" class="section container">
+      <h2>Kegiatan</h2>
+      <div class="cards">
+        <a class="card" href="posts/post1.html" target="_blank" rel="noopener noreferrer">
+          <img src="images/masjid1.svg" alt="post 1">
+          <h3>Pengajian Rutin</h3>
+          <p>Pengajian sore tiap Jumat selepas Maghrib.</p>
+        </a>
+        <a class="card" href="posts/post2.html" target="_blank" rel="noopener noreferrer">
+          <img src="images/masjid2.svg" alt="post 2">
+          <h3>Santunan Anak Yatim</h3>
+          <p>Pelaksanaan setiap bulan Ramadhan.</p>
+        </a>
+        <a class="card" href="posts/post3.html" target="_blank" rel="noopener noreferrer">
+          <img src="images/masjid3.svg" alt="post 3">
+          <h3>Kerja Bakti</h3>
+          <p>Bersih-bersih dan perawatan fasilitas masjid.</p>
+        </a>
+      </div>
+    </section>
+
+    <section id="kebutuhan" class="section container">
+      <h2>Kebutuhan</h2>
+      <ul class="needs">
+        <li>Karpet baru untuk ruang utama (3x)</li>
+        <li>Perbaikan lampu halaman</li>
+        <li>Perlengkapan kebersihan (sapu, alat pel)</li>
+      </ul>
+    </section>
+
+    <section id="contact" class="section container">
+      <h2>Kontak</h2>
+      <p>Alamat: Jl. Contoh No.1 — Telepon: 0812-xxxx-xxxx</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <p>&copy; Masjid Al-Hamd</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
